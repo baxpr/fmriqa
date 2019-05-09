@@ -1,0 +1,53 @@
+---
+inputs:
+  default:
+    code_path: MASIMATLAB/trunk/xnatspiders/matlab/fmriqa_v4
+    spider: Spider_FMRIQA_v4_0_0.py
+    working_dir: 
+    spm12_path: /data/mcr/spm12
+    magick_path: /usr/bin
+    matlab_bin: 
+    project: 
+    subject: 
+    session: 
+    scan: 
+  xnat:
+  scans:
+    - scan1:
+      types: fmri
+      needqc: false
+      resources:
+        - resource: NIFTI
+          varname: fmri_file
+    - scan2:
+      types: T1
+      needqc: false
+      resources:
+        - resource: NIFTI
+          varname: t1_file
+    - assessor1:
+      proctypes: Multi_Atlas
+      needqc: false
+      resources:
+        - resource: SEG
+          varname: seg_file
+command: >
+  python {code_path}/{spider}
+  --code_path {code_path}
+  --spm12_path {spm12_path}
+  --magick_path {magick_path}
+  --fmri_file {fmri_file}
+  --t1_file {t1_file}
+  --seg_file {seg_file}
+  --project {project}
+  --subject {subject}
+  --session {session}
+  --scan {scan}
+attrs:
+  # suffix:
+  xsitype: proc:genProcData
+  walltime: 01:00:00
+  memory: 10240
+  ppn: 4
+  type: scan # session
+  scan_nb: scan1 # not used if session

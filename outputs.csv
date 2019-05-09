@@ -1,0 +1,10 @@
+fmriqa_v4.pdf,FILE,PDF
+rp_fmri.txt,FILE,RP
+fmriqa_v4_stats.csv,FILE,STATS
+FD.txt,FILE,FD
+DVARS.txt,FILE,DVARS
+global.txt,FILE,GLOBAL
+meanfmri.nii.gz,FILE,MEANFMRI
+median_voxel_displacement_mm.txt,FILE,DISPLC
+temporal_snr.nii.gz,FILE,TSNR_IMG
+voxel_displacement_mm_95prctile.nii.gz,FILE,DISPLC_IMG

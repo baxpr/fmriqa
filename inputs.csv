@@ -1,0 +1,11 @@
+code_path,PATH,Path to this code in the repo
+spm12_path,PATH,Path to SPM12 (r6225)
+magick_path,PATH,Path to ImageMagick executables
+matlab_bin,PATH,Matlab executable
+fmri_file,FILE,NIFTI resource of the fMRI scan
+t1_file,FILE,NIFTI resource of the T1 scan
+seg_file,FILE,SEG resource of the Multi_Atlas assessor of the T1 scan
+project,STRING,project
+subject,STRING,subject
+session,STRING,session
+scan,STRING,scan
