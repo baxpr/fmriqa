@@ -4,3 +4,6 @@ spm*.ps
 *~
 localdocker.sh
 *.simg
+*.gz
+cat12_spider
+spm12_*
