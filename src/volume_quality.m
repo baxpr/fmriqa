@@ -155,7 +155,7 @@ stats = struct( ...
 	'maxrot_firstvol_deg_deprecated',max(max(abs(rpdeg(:,4:6)))) ...
 	);
 
-fid = fopen(fullfile(out_path,'fmriqa_v4_stats.csv'),'wt');
+fid = fopen(fullfile(out_path,'fmriqa_stats.csv'),'wt');
 fn = fieldnames(stats);
 for s = 1:length(fn)
 	fprintf(fid,'%s,%0.3f\n',fn{s},stats.(fn{s}));
@@ -163,7 +163,7 @@ end
 fclose(fid);
 
 % Save stats in new format
-fid = fopen(fullfile(out_path,'fmriqa_v4_1_stats.csv'),'wt');
+fid = fopen(fullfile(out_path,'fmriqa_stats_wide.csv'),'wt');
 fprintf(fid, ...
 	['fd_mean,dvars_mean,tsnr_robust_median,global_temporal_stddev,' ...
 	'voxel_displacement_mm_95prctile,maxtrans_firstvol_mm_deprecated,' ...
