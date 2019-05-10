@@ -13,7 +13,9 @@ if strcmp('.gz',t1_file(end-2:end))
 	system(['gunzip -f ' t1_file]);
 	t1_file = t1_file(1:end-3);
 end
-movefile(t1_file,fullfile(out_path,'t1.nii'));
+if ~strcmp(n,'t1.nii')
+	movefile(t1_file,fullfile(out_path,'t1.nii'));
+end
 t1_file = fullfile(out_path,'t1.nii');
 
 [~,n,e] = fileparts(seg_file);
@@ -23,7 +25,9 @@ if strcmp('.gz',seg_file(end-2:end))
 	system(['gunzip -f ' seg_file]);
 	seg_file = seg_file(1:end-3);
 end
-movefile(seg_file,fullfile(out_path,'seg.nii'));
+if ~strcmp(n,'seg.nii')
+	movefile(seg_file,fullfile(out_path,'seg.nii'));
+end
 seg_file = fullfile(out_path,'seg.nii');
 
 [~,n,e] = fileparts(fmri_file);
@@ -33,7 +37,9 @@ if strcmp('.gz',fmri_file(end-2:end))
 	system(['gunzip -f ' fmri_file]);
 	fmri_file = fmri_file(1:end-3);
 end
-movefile(fmri_file,fullfile(out_path,'fmri.nii'));
+if ~strcmp(n,'fmri.nii')
+	movefile(fmri_file,fullfile(out_path,'fmri.nii'));
+end
 fmri_file = fullfile(out_path,'fmri.nii');
 
 % Make an extra copy of the fmri so we can get the original headers even
