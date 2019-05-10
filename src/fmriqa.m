@@ -63,4 +63,8 @@ system(['gzip -f ' out_path '/temporal_snr.nii']);
 system(['gzip -f ' out_path '/voxel_displacement_mm_95prctile.nii']);
 
 
+%% Exit
+if isdeployed
+	exit
+end
 
