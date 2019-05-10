@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sh run_spm12.sh /usr/local/MATLAB/MATLAB_Runtime/v92 \
+sh run_spm12.sh /usr/local/MATLAB/MATLAB_Runtime/v92 function fmriqa \
 out_path ../OUTPUTS \
 t1_file ../INPUTS/t1.nii.gz \
 seg_file ../INPUTS/seg.nii.gz \
