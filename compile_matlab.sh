@@ -22,8 +22,8 @@ export PATH=/usr/local/MATLAB/R2017a/bin:${PATH}
 
 # We use SPM12's standalone tool, but adding our own code to the compilation path
 WD=`pwd`
-matlab -nodisplay -nodesktop -nosplash -sd "${WD}"/src -r \
-    "spm_make_standalone_local('${WD}/bin','spm_standalone.m','','${WD}'); exit"
+matlab -nodisplay -nodesktop -nosplash -sd "${WD}" -r \
+    "spm_make_standalone_local('${SPM_PATH}','${WD}/bin','${WD}/src'); exit"
 
 # We grant lenient execute permissions to the matlab executable and runscript so
 # we don't have hiccups later.

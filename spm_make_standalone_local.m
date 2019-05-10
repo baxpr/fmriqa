@@ -1,4 +1,8 @@
-function spm_make_standalone(outdir, gateway, contentsver, extradir)
+function spm_make_standalone_local( ...
+	spmdir, ...
+	outdir, ...
+	extradir ...
+	)
 % Compile SPM as a standalone executable using the MATLAB compiler
 %   http://www.mathworks.com/products/compiler/
 %
@@ -39,12 +43,11 @@ end
 
 %-Input arguments
 %--------------------------------------------------------------------------
-if ~nargin
-    outdir = fullfile(spm('Dir'),'..','standalone'); 
-    if ~exist(outdir,'dir'), mkdir(outdir); end
-end
-if nargin < 2 || isempty(gateway), gateway = 'spm_standalone.m'; end
-if nargin < 3, contentsver = ''; end
+addpath(spmdir);
+if ~exist(outdir,'dir'), mkdir(outdir); end
+gateway = 'spm_standalone.m';
+contentsver = '';
+
 
 %==========================================================================
 %-Static listing of SPM toolboxes
