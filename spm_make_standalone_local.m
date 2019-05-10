@@ -43,8 +43,12 @@ end
 
 %-Input arguments
 %--------------------------------------------------------------------------
+
+% We need SPM in the path, and also need to trigger it's auto-add of config
+% paths
 addpath(spmdir);
 spm_jobman('initcfg');
+
 if ~exist(outdir,'dir'), mkdir(outdir); end
 gateway = 'spm_standalone.m';
 contentsver = '';

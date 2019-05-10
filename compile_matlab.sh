@@ -20,6 +20,11 @@ SPM_PATH=/wkdir/spm12_r7487
 # We may need to add Matlab to the path on the compilation machine
 export PATH=/usr/local/MATLAB/R2017a/bin:${PATH}
 
+# SPM external stuff often causes issues with compilation. We don't need any of it 
+# here, so delete. Example: fieldtrip module has some compatibility functions that
+# cause collisions when we compile using -a option for the SPM dir
+rm -fr ${SPM_PATH}/external
+
 # We use SPM12's standalone tool, but adding our own code to the compilation path
 WD=`pwd`
 matlab -nodisplay -nodesktop -nosplash -sd "${WD}" -r \
