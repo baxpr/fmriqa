@@ -40,9 +40,8 @@ fmriqa
 
   # Singularity-hub doesn't work with github LFS (it gets the pointer info instead 
   # of the actual file) so we get the compiled matlab executable via direct download
-  rm /matlab_bin/fmri_conncalc
-  wget -nv -P /opt/fmriqa/bin https://github.com/baxpr/fmriqa/raw/master/bin/spm12
-  chmod ugo+rx /opt/fmriqa/bin/spm12
+  rm /opt/fmriqa/bin/spm12.ctf
+  wget -nv -P /opt/fmriqa/bin https://github.com/baxpr/fmriqa/raw/master/bin/spm12.ctf
 
 
 %environment
