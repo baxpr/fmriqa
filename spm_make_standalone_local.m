@@ -44,6 +44,7 @@ end
 %-Input arguments
 %--------------------------------------------------------------------------
 addpath(spmdir);
+spm_jobman('initcfg');
 if ~exist(outdir,'dir'), mkdir(outdir); end
 gateway = 'spm_standalone.m';
 contentsver = '';
