@@ -1,7 +1,7 @@
 #!/bin/bash
 
 sh run_spm12.sh /usr/local/MATLAB/MATLAB_Runtime/v92 \
-out_path /OUTPUTS \
+out_path ../OUTPUTS \
 t1_file ../INPUTS/t1.nii.gz \
 seg_file ../INPUTS/seg.nii.gz \
 fmri_file ../INPUTS/fmri.nii.gz \
